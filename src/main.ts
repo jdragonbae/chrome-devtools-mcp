@@ -25,6 +25,7 @@ import {
 import {ToolCategory} from './tools/categories.js';
 import type {ToolDefinition} from './tools/ToolDefinition.js';
 import {tools} from './tools/tools.js';
+import {setContextInstance} from './context.js';
 
 // If moved update release-please config
 // x-release-please-start-version
@@ -88,6 +89,7 @@ async function getContext(): Promise<McpContext> {
       experimentalDevToolsDebugging: devtools,
       experimentalIncludeAllPages: args.experimentalIncludeAllPages,
     });
+    setContextInstance(context);
   }
   return context;
 }

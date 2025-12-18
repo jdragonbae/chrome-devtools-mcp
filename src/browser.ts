@@ -19,6 +19,20 @@ import {puppeteer} from './third_party/index.js';
 
 let browser: Browser | undefined;
 
+export async function disconnectBrowser(): Promise<void> {
+  if (browser?.connected) {
+    browser = undefined;
+  }
+}
+
+export function getBrowser(): Browser | undefined {
+  return browser;
+}
+
+export function setBrowser(newBrowser: Browser | undefined): void {
+  browser = newBrowser;
+}
+
 function makeTargetFilter() {
   const ignoredPrefixes = new Set([
     'chrome://',
