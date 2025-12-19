@@ -13,6 +13,7 @@ import * as screenshotTools from './screenshot.js';
 import * as scriptTools from './script.js';
 import * as snapshotTools from './snapshot.js';
 import * as switchBrowserTool from './switch_browser.js';
+import * as layoutTools from './layout.js';
 import type {ToolDefinition} from './ToolDefinition.js';
 
 const tools = [
@@ -26,6 +27,7 @@ const tools = [
   ...Object.values(scriptTools),
   ...Object.values(snapshotTools),
   ...Object.values(switchBrowserTool),
+  ...Object.values(layoutTools),
 ] as ToolDefinition[];
 
 tools.sort((a, b) => {
